@@ -1,0 +1,18 @@
+<h1>Cocktails#show</h1>
+<p>Find me in app/views/cocktails/show.html.erb</p>
+
+<p>
+  <%= @cocktail.name %>
+</p>
+<p>
+  <%= @cocktail.description %>
+</p>
+
+<% @cocktail.doses.each do |dose| %>
+  <%= dose.description %>
+  <%= dose.ingredient.name %>
+  <%= link_to('Delete', dose_path(dose), { method: :delete,  class: "btn btn-danger" }) %> |
+
+<% end %>
+
+  <!-- need to change method to 'delete' because will automatically pass 'get' -->
